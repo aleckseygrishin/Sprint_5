@@ -32,6 +32,8 @@ class TestLoginSite:
 
         assert button_order.is_displayed() and button_order.text == "Оформить заказ"
 
+        driver.quit()
+
     @pytest.mark.parametrize('url', [urls.URL_REGISTRATION, urls.URL_FORGOT_PASSWORD])
     def test_login_with_registration_and_forgot_password_pages_place_an_order_button_is_visible(self, driver, url):
         driver.get(url)
@@ -54,3 +56,5 @@ class TestLoginSite:
         button_order = driver.find_element(*StellarBurgersLocators.PLACE_AN_ORDER_BUTTON)
 
         assert button_order.is_displayed() and button_order.text == "Оформить заказ"
+
+        driver.quit()

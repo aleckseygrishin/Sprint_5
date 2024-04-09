@@ -29,3 +29,5 @@ class StellarBurgersLocators:
     MAIN_LOGO = (By.XPATH, "//div/a[@href='/']")
     # Кнопка конструктора (хедер)
     CONSTRUCTOR_BUTTON = (By.XPATH, "//li/a[@href='/']")
+    # Кнопка выхода в личном кабинете
+    EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
