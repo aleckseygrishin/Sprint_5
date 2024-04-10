@@ -41,4 +41,3 @@ class TestSwitchingConstructor:
 
         assert "tab_tab_type_current__2BEPc" in checking_fillings_class.get_attribute("class")
 
-        driver.quit()
