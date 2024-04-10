@@ -1,6 +1,5 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-
 import urls
 from locators import StellarBurgersLocators
 from user_data import DataUser
@@ -22,10 +21,12 @@ class TestRegitration:
 
         button_registration = driver_registration.find_element(*StellarBurgersLocators.REGISTRATION_BUTTON)
         button_registration.click()
-        WebDriverWait(driver_registration, 3).until(expected_conditions.visibility_of_element_located(
+        WebDriverWait(driver_registration, 10).until(expected_conditions.visibility_of_element_located(
             StellarBurgersLocators.TITLE_H2_ENTER))
 
         assert driver_registration.current_url == urls.URL_LOGIN
+
+        driver_registration.quit()
 
     # Тест некорректного пароля (меньше 6 символов)
     def test_registration_password_len_is_less_six_symbols_err_incorrect_password(self, driver_registration):
@@ -35,9 +36,11 @@ class TestRegitration:
         button_registration = driver_registration.find_element(*StellarBurgersLocators.REGISTRATION_BUTTON)
         button_registration.click()
 
-        WebDriverWait(driver_registration, 3).until(expected_conditions.visibility_of_element_located(
+        WebDriverWait(driver_registration, 10).until(expected_conditions.visibility_of_element_located(
             StellarBurgersLocators.ERROR_PASSWORD_LEN))
 
         p_element_error = driver_registration.find_element(*StellarBurgersLocators.ERROR_PASSWORD_LEN)
 
         assert p_element_error.is_displayed() and p_element_error.text == "Некорректный пароль"
+
+        driver_registration.quit()

@@ -31,3 +31,9 @@ class StellarBurgersLocators:
     CONSTRUCTOR_BUTTON = (By.XPATH, "//li/a[@href='/']")
     # Кнопка выхода в личном кабинете
     EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
+    # Раздел булок в конструкторе
+    BREADS_CONSTRUCTOR = (By.XPATH, "//span[text()='Булки']/parent::div")
+    # Раздел соусов в конструкторе
+    SAUCES_CONSTRUCTOR = (By.XPATH, "//span[text()='Соусы']/parent::div")
+    # Раздел начинок в конструкторе
+    FILLINGS_CONSTRUCTOR = (By.XPATH, "//span[text()='Начинки']/parent::div")

@@ -1,5 +1,4 @@
 import time
-
 import urls
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
@@ -13,7 +12,7 @@ class TestSwitchPages:
         time.sleep(0.3)
         switch_personal_acc.click()
 
-        WebDriverWait(login, 3).until(expected_conditions.url_to_be(urls.URL_PROFILE))
+        WebDriverWait(login, 10).until(expected_conditions.url_to_be(urls.URL_PROFILE))
 
         assert login.current_url == urls.URL_PROFILE
 

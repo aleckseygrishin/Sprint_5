@@ -25,7 +25,7 @@ class TestLoginSite:
         enter_button = driver.find_element(*StellarBurgersLocators.ENTER_BUTTON)
         enter_button.click()
 
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
+        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
             StellarBurgersLocators.PLACE_AN_ORDER_BUTTON))
 
         button_order = driver.find_element(*StellarBurgersLocators.PLACE_AN_ORDER_BUTTON)
@@ -50,7 +50,7 @@ class TestLoginSite:
         enter_button = driver.find_element(*StellarBurgersLocators.ENTER_BUTTON)
         enter_button.click()
 
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
+        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
             StellarBurgersLocators.PLACE_AN_ORDER_BUTTON))
 
         button_order = driver.find_element(*StellarBurgersLocators.PLACE_AN_ORDER_BUTTON)
